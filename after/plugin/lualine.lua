@@ -7,15 +7,15 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {},
     lualine_c = {'filename'},
-    lualine_x = { 'filetype'},
+    lualine_x = {},
     lualine_y = {'location'},
-    lualine_z = {{'datetime', style = "%H:%M"}}
+    lualine_z = {function() return "" end, {'datetime', style = "%H:%M"}}
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_x = {function() return "" end},
     lualine_y = {},
     lualine_z = {}
   },

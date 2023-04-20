@@ -13,31 +13,30 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
 	use {'wbthomason/packer.nvim'}
-	-------------------------------------------------------------
+-------------------------------------------------------------
 	-- GruvBox ColorScheme
-	use { "ellisonleao/gruvbox.nvim" }
+		use {"ellisonleao/gruvbox.nvim" }
 
 	-- Telescope
-	use {'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	requires = { {'nvim-lua/plenary.nvim'} }}
+		use {'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		requires = { {'nvim-lua/plenary.nvim'} }}
 
 	-- Nvim-Tree
-	use {'nvim-tree/nvim-tree.lua'}
+		use {'nvim-tree/nvim-tree.lua'}
 
 	-- Nvim-Tree Icons
-	use {'nvim-tree/nvim-web-devicons'}
+		use {'nvim-tree/nvim-web-devicons'}
 
 	-- Lua Line
-	use {'nvim-lualine/lualine.nvim'}
+		use {'nvim-lualine/lualine.nvim'}
 
 	-- Tree-Stitter
-	use {'nvim-treesitter/nvim-treesitter'}
-
+		use {'nvim-treesitter/nvim-treesitter'}
 
 	-- LSP Zero
-	use {  'VonHeikemen/lsp-zero.nvim',
-	branch = 'v2.x',
-	requires = {
+		use {'VonHeikemen/lsp-zero.nvim',
+		branch = 'v2.x',
+		requires = {
 		-- LSP Support
 		{'neovim/nvim-lspconfig'},            
 		{                                      
@@ -49,27 +48,43 @@ return require('packer').startup(function(use)
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},         -- Required
 			{'hrsh7th/cmp-nvim-lsp'},     -- Required
-			{'hrsh7th/cmp-buffer'},       -- Optional
-			{'hrsh7th/cmp-path'},         -- Optional
-			{'saadparwaiz1/cmp_luasnip'}, -- Optional
-			{'hrsh7th/cmp-nvim-lua'},     -- Optional	}
-		}
-	}
+			{'hrsh7th/cmp-buffer'},       -- buffer completions
+			{'hrsh7th/cmp-path'},         -- path completions
+			{'saadparwaiz1/cmp_luasnip'}, -- snippet completions
+			{'hrsh7th/cmp-nvim-lua'},     -- Optional
+		}}
+
+	-- Snippets
+		use {"L3MON4D3/LuaSnip"} --snippet engine
+		use {"rafamadriz/friendly-snippets"} -- a bunch of snippets to use
+
 	-- Alpha Dashboard
-	use {
-		'goolord/alpha-nvim',
+		use {'goolord/alpha-nvim',
 		requires = { 'kyazdani42/nvim-web-devicons' },
 		config = function ()
 			require'alpha'.setup(require'alpha.themes.startify'.config)
-		end
-	}
+		end}
 
 	-- Better indents
-	use { "lukas-reineke/indent-blankline.nvim"}
+		use {"lukas-reineke/indent-blankline.nvim"}
 
 	-- Faster Startup
-	use { "lewis6991/impatient.nvim"}
+		use {"lewis6991/impatient.nvim"}
 
+	-- Buffer Line // Tabs
+		use {"akinsho/bufferline.nvim"}	
+		  
+	-- Comments
+		use {'numToStr/Comment.nvim',
+			  config = function()
+				  require('Comment').setup()
+			  end}
+		use {"JoosepAlviste/nvim-ts-context-commentstring"}
+
+	-- Toggle Terminal
+		use {"akinsho/toggleterm.nvim"}
+
+	
 -------------------------------------------------------------
 	if packer_bootstrap then
 		require('packer').sync()
