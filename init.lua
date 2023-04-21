@@ -4,6 +4,7 @@ require("plugins")
 -- vim.wo.number = true 
 -- show relative line number number
 vim.wo.relativenumber = true
+vim.opt.nu = true
 
 vim.g.mapleader = " "  --Remap space as leader key
 
