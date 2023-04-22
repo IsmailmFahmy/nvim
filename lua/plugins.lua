@@ -18,8 +18,10 @@ return require('packer').startup(function(use)
 		use {"lewis6991/impatient.nvim"}
 		use {"nathom/filetype.nvim"}
 
-	-- GruvBox ColorScheme
+	-- ColorSchemes
 		use {"ellisonleao/gruvbox.nvim" }
+		use {'nyoom-engineering/oxocarbon.nvim'}
+		use {'rose-pine/neovim'}
 
 	-- Telescope
 		use {'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -42,9 +44,8 @@ return require('packer').startup(function(use)
 		branch = 'v2.x',
 		requires = {
 		-- LSP Support
-		{'neovim/nvim-lspconfig'},            
-		{                                      
-			'williamboman/mason.nvim',
+		{'neovim/nvim-lspconfig'},
+		{'williamboman/mason.nvim',
 			run = function()
 				pcall(vim.cmd, 'MasonUpdate')
 			end,},
@@ -73,8 +74,8 @@ return require('packer').startup(function(use)
 		use {"lukas-reineke/indent-blankline.nvim"}
 
 	-- Buffer Line // Tabs
-		use {"akinsho/bufferline.nvim"}	
-		  
+		use {"akinsho/bufferline.nvim"}
+
 	-- Comments
 		use {'numToStr/Comment.nvim',
 			  config = function()

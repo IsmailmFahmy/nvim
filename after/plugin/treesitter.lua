@@ -1,18 +1,16 @@
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = {"c", "lua", "vim", "query" },
+local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+if not status_ok then
+	return
 
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
-
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
-
-  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
-  highlight = {
-    enable = true,
-  },
-}
+configs.setup {
+  ensure_installed = { "bash", "c", "javascript", "lua", "python", "css", "rust", "java"}, -- one of "all" or a list of languages
+	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
+	highlight = {
+		enable = true, -- false will disable the whole extension
+		disable = { "css" }, -- list of language that will be disabled
+	},
+	autopairs = {
+		enable = true,
+	},
+	indent = { enable = true, disable = { "python", "css" } },
+}end

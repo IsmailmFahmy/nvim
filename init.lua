@@ -1,20 +1,21 @@
 require("plugins")
 
+vim = vim
+
 vim.g.mapleader = " "  --Remap space as leader key
 
 vim.keymap.set('n', '<c-l>', vim.cmd.bn)  -- Ctrl + l ==> next buffer
 vim.keymap.set('n', '<c-h>', vim.cmd.bn)  -- Ctrl + h ==> previous buffer
-vim.keymap.set('n', '<c-w>', vim.cmd.bd)  -- Ctrl + w ==> close current buffer
-vim.keymap.set('n', '<c-s>', vim.cmd.w)  -- Ctrl + s ==> save current file
+vim.keymap.set('n', '<c-w>', "<cmd>bdelete!<CR>")  -- Ctrl + w ==> close current buffer
+vim.keymap.set('n', '<c-s>', "<cmd>w!<CR>")  -- Ctrl + s ==> save current file
 
 vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')  -- Ctrl + n ==> Toggle NvimTree
 vim.keymap.set('n', '<space>n', ':NvimTreeFocus<CR>')  -- space + n ==> Focus NvimTree
 
 vim.api.nvim_set_keymap('','<c-_>' ,'gcc',{noremap = false}) -- Ctrl + / ==> comment
 
-
 -- Suppress errors in Windows
-vim.notify = function (msg, log_level, _opts)
+vim.notify = function (msg, log_level)
     if msg:match("exit code") then return end
     if log_level == vim.log.levels.ERROR then
         vim.api.nvim_err_writeln(msg)

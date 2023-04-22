@@ -3,12 +3,7 @@ if not status_ok then
   return
 end
 
-local api = require('Comment.api')
-local config = require('Comment.config'):get()
-
 comment.setup {
-	-- vim.keymap.set('n', '<C-_>', api.toggle.blockwise.current),
-	-- vim.keymap.set('v', '<C-_>', 'gc'),
   pre_hook = function(ctx)
     local U = require "Comment.utils"
 
