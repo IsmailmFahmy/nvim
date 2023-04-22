@@ -2,7 +2,7 @@ local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+	fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 		vim.cmd [[packadd packer.nvim]]
 		return true
 	end
@@ -14,6 +14,10 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	use {'wbthomason/packer.nvim'}
 -------------------------------------------------------------
+	-- Faster Startup
+		use {"lewis6991/impatient.nvim"}
+		use {"nathom/filetype.nvim"}
+
 	-- GruvBox ColorScheme
 		use {"ellisonleao/gruvbox.nvim" }
 
@@ -68,9 +72,6 @@ return require('packer').startup(function(use)
 	-- Better indents
 		use {"lukas-reineke/indent-blankline.nvim"}
 
-	-- Faster Startup
-		use {"lewis6991/impatient.nvim"}
-
 	-- Buffer Line // Tabs
 		use {"akinsho/bufferline.nvim"}	
 		  
@@ -84,7 +85,8 @@ return require('packer').startup(function(use)
 	-- Toggle Terminal
 		use {"akinsho/toggleterm.nvim"}
 
-	
+	-- StartupTime
+		use 'dstein64/vim-startuptime'
 -------------------------------------------------------------
 	if packer_bootstrap then
 		require('packer').sync()
