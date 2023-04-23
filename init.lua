@@ -1,18 +1,23 @@
 require("plugins")
-
+vim.g.mapleader = " "  --Remap space as leader key
 vim = vim
 
-vim.g.mapleader = " "  --Remap space as leader key
 
 vim.keymap.set('n', '<c-l>', vim.cmd.bn)  -- Ctrl + l ==> next buffer
-vim.keymap.set('n', '<c-h>', vim.cmd.bn)  -- Ctrl + h ==> previous buffer
-vim.keymap.set('n', '<c-w>', "<cmd>bdelete!<CR>")  -- Ctrl + w ==> close current buffer
+vim.keymap.set('n', '<c-h>', vim.cmd.bp)  -- Ctrl + h ==> previous buffer
+vim.keymap.set('n', '<c-w>', "<cmd>SmartQ!<CR>")  -- Ctrl + w ==> close current buffer
 vim.keymap.set('n', '<c-s>', "<cmd>w!<CR>")  -- Ctrl + s ==> save current file
+vim.keymap.set('n', '<space>so', ':so %<CR>')  -- space + s + o ==> Source Current File
 
-vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')  -- Ctrl + n ==> Toggle NvimTree
+vim.keymap.set('n', '<space>ps', ':PackerSync<CR>')  -- space + p + s ==> Packer Sync
+
 vim.keymap.set('n', '<space>n', ':NvimTreeFocus<CR>')  -- space + n ==> Focus NvimTree
+vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')  -- Ctrl + n ==> Toggle NvimTree
 
 vim.api.nvim_set_keymap('','<c-_>' ,'gcc',{noremap = false}) -- Ctrl + / ==> comment
+
+
+
 
 -- Suppress errors in Windows
 vim.notify = function (msg, log_level)
@@ -47,7 +52,7 @@ local options = {
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   -- expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
-  tabstop = 2,                             -- insert 2 spaces for a tab
+  tabstop = 3,                             -- insert 2 spaces for a tab
   cursorline = true,                       -- highlight the current line
   number = true,                           -- set numbered lines
   relativenumber = true,                   -- set relative numbered lines
