@@ -14,9 +14,11 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	use {'wbthomason/packer.nvim'}
 -------------------------------------------------------------
+
 	-- Faster Startup
 		use {"lewis6991/impatient.nvim"}
 		use {"nathom/filetype.nvim"}
+		use 'dstein64/vim-startuptime'
 
 	-- ColorSchemes
 		use {"ellisonleao/gruvbox.nvim" }
@@ -24,7 +26,7 @@ return require('packer').startup(function(use)
 		use {'rose-pine/neovim'}
 
 	-- Telescope
-		use {'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		use {'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} }}
 
 	-- Nvim-Tree
@@ -86,8 +88,12 @@ return require('packer').startup(function(use)
 	-- Toggle Terminal
 		use {"akinsho/toggleterm.nvim"}
 
-	-- StartupTime
-		use 'dstein64/vim-startuptime'
+	-- Which-Key
+		-- use {"folke/which-key.nvim"}
+
+	-- SmartQ
+	use {'marklcrns/vim-smartq'}
+
 -------------------------------------------------------------
 	if packer_bootstrap then
 		require('packer').sync()
