@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 		use {"ellisonleao/gruvbox.nvim" }
 		use {'nyoom-engineering/oxocarbon.nvim'}
 		use {'rose-pine/neovim'}
+		use {'xiyaowong/transparent.nvim'}
 
 	-- Telescope
 		use {'nvim-telescope/telescope.nvim',
@@ -41,26 +42,35 @@ return require('packer').startup(function(use)
 	-- Tree-Stitter
 		use {'nvim-treesitter/nvim-treesitter'}
 
-	-- LSP Zero
+   -- Trouble
+		use {"folke/trouble.nvim",
+	   config = function()
+		 require("trouble").setup {}
+	  end
+	}
+	-- LSP
 		use {'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
 		requires = {
-		-- LSP Support
-		{'neovim/nvim-lspconfig'},
-		{'williamboman/mason.nvim',
-			run = function()
-				pcall(vim.cmd, 'MasonUpdate')
-			end,},
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},         -- Required
-			{'hrsh7th/cmp-nvim-lsp'},     -- Required
-			{'hrsh7th/cmp-buffer'},       -- buffer completions
-			{'hrsh7th/cmp-path'},         -- path completions
-			{'saadparwaiz1/cmp_luasnip'}, -- snippet completions
-			{'hrsh7th/cmp-nvim-lua'},     -- Optional
-		}}
+   -- LSP Support
+	   {'neovim/nvim-lspconfig'},             -- Required
+    {                                      -- Optional
+      'williamboman/mason.nvim',
+      run = function()
+        pcall(vim.cmd, 'MasonUpdate')
+      end,
+    },
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},     -- Required
+    {'hrsh7th/cmp-nvim-lsp'}, -- Required
+	 {'hrsh7th/cmp-buffer'},       -- buffer completions
+    {'L3MON4D3/LuaSnip'},     -- Required
+    {'hrsh7th/cmp-path'},         -- path completions
+    {'hrsh7th/cmp-nvim-lua'},     -- Optional
+  }
+}
 	-- Snippets
 		use {"L3MON4D3/LuaSnip"} --snippet engine
 		use {"rafamadriz/friendly-snippets"} -- a bunch of snippets to use

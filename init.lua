@@ -1,34 +1,19 @@
 require("plugins")
-vim.g.mapleader = " "  --Remap space as leader key
-vim = vim
-
-
-vim.keymap.set('n', '<c-l>', vim.cmd.bn)  -- Ctrl + l ==> next buffer
-vim.keymap.set('n', '<c-h>', vim.cmd.bp)  -- Ctrl + h ==> previous buffer
-vim.keymap.set('n', '<c-w>', "<cmd>SmartQ!<CR>")  -- Ctrl + w ==> close current buffer
-vim.keymap.set('n', '<c-s>', "<cmd>w!<CR>")  -- Ctrl + s ==> save current file
-vim.keymap.set('n', '<space>so', ':so %<CR>')  -- space + s + o ==> Source Current File
-
-vim.keymap.set('n', '<space>ps', ':PackerSync<CR>')  -- space + p + s ==> Packer Sync
-
-vim.keymap.set('n', '<space>n', ':NvimTreeFocus<CR>')  -- space + n ==> Focus NvimTree
-vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')  -- Ctrl + n ==> Toggle NvimTree
-
-vim.api.nvim_set_keymap('','<c-_>' ,'gcc',{noremap = false}) -- Ctrl + / ==> comment
-
+require("remap")
 
 
 
 -- Suppress errors in Windows
-vim.notify = function (msg, log_level)
-    if msg:match("exit code") then return end
-    if log_level == vim.log.levels.ERROR then
-        vim.api.nvim_err_writeln(msg)
-    else
-    vim.api.nvim_echo({{msg}}, true, {})end
-end
+-- vim.notify = function (msg, log_level)
+--     if msg:match("exit code") then return end
+--     if log_level == vim.log.levels.ERROR then
+--         vim.api.nvim_err_writeln(msg)
+--     else
+--     vim.api.nvim_echo({{msg}}, true, {})end
+-- end
 
 local options = {
+  incsearch = true,
   backup = false,                          -- creates a backup file
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
@@ -45,7 +30,7 @@ local options = {
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
-  -- termguicolors = true,                    -- set term gui colors (most terminals support this)
+  termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 300,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = true,                         -- enable persistent undo
   updatetime = 300,                        -- faster completion (4000ms default)
