@@ -7,24 +7,7 @@ lsp.ensure_installed({
   'pyright',
   'rust_analyzer',
 })
-require'lspconfig'.pylsp.setup{
-  settings = {
-    analysis = {
-      autoSearchPaths = true,
-      diagnosticMode = "workspace",
-      useLibraryCodeForTypes = true
-    },
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = {'W391'},
-          maxLineLength = 100
-        }
-      }
-    }
-  }
-}
--- Fix Undefined global 'vim'
+
 lsp.nvim_workspace()
 
 
@@ -52,6 +35,13 @@ lsp.set_preferences({
         hint = '',
         info = ''
     }
+})
+
+lsp.set_sign_icons({
+   error = '',
+   warn = '',
+   hint = '',
+   info = ''
 })
 
 lsp.on_attach(function(client, bufnr)
