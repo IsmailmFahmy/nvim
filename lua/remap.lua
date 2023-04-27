@@ -12,6 +12,8 @@ vim.keymap.set('n', '<space>ps', ':PackerSync<CR>')  -- space + p + s ==> Packer
 vim.keymap.set('n', '<space>n', ':NvimTreeFocus<CR>')  -- space + n ==> Focus NvimTree
 vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')  -- Ctrl + n ==> Toggle NvimTree
 
+vim.keymap.set('n', '<c-G>', ":echo expand('%:p')<CR>")
+
 vim.api.nvim_set_keymap('','<c-_>' ,'gcc',{noremap = false}) -- Ctrl + / ==> comment
 
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
@@ -32,8 +34,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({"v"}, "Y", [["+y]])
 
 
 vim.keymap.set("n", "Q", "<nop>")
