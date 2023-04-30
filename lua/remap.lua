@@ -2,8 +2,8 @@ vim.g.mapleader = " "  --Remap space as leader key
 
 vim.keymap.set('n', '<c-l>', vim.cmd.bn)  -- Ctrl + l ==> next buffer
 vim.keymap.set('n', '<c-h>', vim.cmd.bp)  -- Ctrl + h ==> previous buffer
-vim.keymap.set('n', '<c-w>', "<cmd>SmartQ!<CR>")  -- Ctrl + w ==> close current buffer
-vim.keymap.set('n', '<c-q>', "<cmd>w!<CR>")  -- Ctrl + s ==> save current file
+vim.keymap.set('n', '<c-q>', "<cmd>SmartQ!<CR>")  -- Ctrl + w ==> close current buffer
+vim.keymap.set('n', '<c-s>', "<cmd>w!<CR>")  -- Ctrl + s ==> save current file
 vim.keymap.set('n', '<space>so', ':so %<CR>')  -- space + s + o ==> Source Current File
 vim.keymap.set('n', '<space>hl', vim.cmd.nohl)  -- space + s + o ==> Source Current File
 

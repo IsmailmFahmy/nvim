@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
 	-- Faster Startup
 		use {"lewis6991/impatient.nvim"}
 		use {"nathom/filetype.nvim"}
-		use 'dstein64/vim-startuptime'
+		use {'dstein64/vim-startuptime'}
 
 	-- ColorSchemes
 		use {"ellisonleao/gruvbox.nvim" }
@@ -26,9 +26,25 @@ return require('packer').startup(function(use)
 		use {'rose-pine/neovim'}
 		use {'xiyaowong/transparent.nvim'}
 
+    -- Zenmode
+        use {
+            "folke/zen-mode.nvim",
+            config = function()
+                require("zen-mode").setup{}
+            end
+        }
+   -- Rust
+		use {'rust-lang/rust.vim'}
 	-- Telescope
 		use {'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} }}
+    -- Trouble
+      use({
+          "folke/trouble.nvim",
+          config = function()
+              require("trouble").setup {1}
+          end
+      })
 
 	-- Nvim-Tree
 		use {'nvim-tree/nvim-tree.lua'}
@@ -42,38 +58,32 @@ return require('packer').startup(function(use)
 	-- Tree-Stitter
 		use {'nvim-treesitter/nvim-treesitter'}
 
-   -- Trouble
-		use {"folke/trouble.nvim",
-	   config = function()
-		 require("trouble").setup {}
-	  end
-	}
-	-- LSP
-		use {'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		requires = {
+   -- ChatGPT
+		use {"github/copilot.vim"}
    -- LSP Support
-	   {'neovim/nvim-lspconfig'},             -- Required
-    {                                      -- Optional
-      'williamboman/mason.nvim',
-      run = function()
-        pcall(vim.cmd, 'MasonUpdate')
-      end,
-    },
-    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+	 use {
+		 'VonHeikemen/lsp-zero.nvim',
+		 branch = 'v1.x',
+		 requires = {
+			 -- LSP Support
+			 {'neovim/nvim-lspconfig'},
+			 {'williamboman/mason.nvim'},
+			 {'williamboman/mason-lspconfig.nvim'},
 
-    -- Autocompletion
-    {'hrsh7th/nvim-cmp'},     -- Required
-    {'hrsh7th/cmp-nvim-lsp'}, -- Required
-	 {'hrsh7th/cmp-buffer'},       -- buffer completions
-    {'L3MON4D3/LuaSnip'},     -- Required
-    {'hrsh7th/cmp-path'},         -- path completions
-    {'hrsh7th/cmp-nvim-lua'},     -- Optional
-  }
-}
-	-- Snippets
-		use {"L3MON4D3/LuaSnip"} --snippet engine
-		use {"rafamadriz/friendly-snippets"} -- a bunch of snippets to use
+			 -- Autocompletion
+			 {'hrsh7th/nvim-cmp'},
+			 {'hrsh7th/cmp-buffer'},
+			 {'hrsh7th/cmp-path'},
+			 {'saadparwaiz1/cmp_luasnip'},
+			 {'hrsh7th/cmp-nvim-lsp'},
+			 {'hrsh7th/cmp-nvim-lua'},
+
+			 -- Snippets
+			 {'L3MON4D3/LuaSnip'},
+			 {'rafamadriz/friendly-snippets'},
+		 }
+	 }
+
 
 	-- Alpha Dashboard
 		use {'goolord/alpha-nvim',
