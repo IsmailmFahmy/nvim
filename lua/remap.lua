@@ -1,5 +1,7 @@
 vim.g.mapleader = " "  --Remap space as leader key
 
+vim.keymap.set('v','<', '<gv')
+vim.keymap.set('v','>', '>gv')
 vim.keymap.set('n', '<c-l>', vim.cmd.bn)  -- Ctrl + l ==> next buffer
 vim.keymap.set('n', '<c-h>', vim.cmd.bp)  -- Ctrl + h ==> previous buffer
 vim.keymap.set('n', '<c-q>', "<cmd>SmartQ!<CR>")  -- Ctrl + w ==> close current buffer

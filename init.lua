@@ -1,4 +1,4 @@
-require("plugins")
+-- require("plugins")
 require("remap")
 
 
@@ -16,11 +16,10 @@ require("remap")
 vim.api.nvim_create_autocmd("CmdlineLeave", {
 	callback = function()
 		vim.fn.timer_start(3000, function()
-			print("")
+			print(" ")
 		end)
 	end
 })
-
 
 local options = {
   incsearch = true,

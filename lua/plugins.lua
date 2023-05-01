@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
 		use {'nyoom-engineering/oxocarbon.nvim'}
 		use {'rose-pine/neovim'}
 		use {'xiyaowong/transparent.nvim'}
+		use {'Mofiqul/dracula.nvim'}
 
     -- Zenmode
         use {
