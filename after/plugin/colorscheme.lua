@@ -1,22 +1,18 @@
-
-
-Color = 'oxocarbon'
--- Color = 'gruvbox'
--- Color = 'rose-pine'
--- Color = 'dracula'
-
-
+if (Color == 1 ) then
+	Color = 'oxocarbon'
+elseif (Color == 2 ) then
+	Color = 'gruvbox'
+elseif (Color == 3 ) then
+	Color = 'rose-pine'
+elseif (Color == 4 ) then
+	Color = 'dracula'
+end
 
 
 
 
 vim.o.termguicolors = true
 vim.opt.background = "dark"
--- vim.cmd [[ colorscheme gruvbox ]]
--- vim.cmd [[ colorscheme rose-pine ]]
--- vim.cmd [[ colorscheme oxocarbon ]]
--- vim.cmd [[ colorscheme dracula ]]
-
 
 vim.cmd.colorscheme(Color)
 if (Color == 'rose-pine')
@@ -24,8 +20,6 @@ if (Color == 'rose-pine')
   require('rose-pine').setup({
      disable_background = true
 	})
-
-
 	end
 
 function ColorMyPencils()
