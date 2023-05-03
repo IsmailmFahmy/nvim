@@ -2,12 +2,6 @@ require("plugins")
 require("remap")
 
 
---  1 -> oxocarbon
---  2 -> gruvbox
---  3 -> rose-pine
---  4 -> dracula
-
-Color = 1
 
 
 

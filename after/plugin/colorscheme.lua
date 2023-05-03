@@ -1,15 +1,32 @@
+
+
+
+
+
+
+--     1 -> oxocarbon
+--     2 -> gruvbox
+--     3 -> rose-pine
+--     4 -> dracula
+
+Color = 1
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------
 if (Color == 1 ) then
-	Color = 'oxocarbon'
+  Color = 'oxocarbon'
 elseif (Color == 2 ) then
-	Color = 'gruvbox'
+  Color = 'gruvbox'
 elseif (Color == 3 ) then
-	Color = 'rose-pine'
+  Color = 'rose-pine'
 elseif (Color == 4 ) then
-	Color = 'dracula'
+  Color = 'dracula'
 end
-
-
-
 
 vim.opt.background = "dark"
 
