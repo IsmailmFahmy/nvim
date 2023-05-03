@@ -2,15 +2,15 @@ require("plugins")
 require("remap")
 
 
+--  1 -> oxocarbon
+--  2 -> gruvbox
+--  3 -> rose-pine
+--  4 -> dracula
 
--- Suppress errors in Windows
--- vim.notify = function (msg, log_level)
---     if msg:match("exit code") then return end
---     if log_level == vim.log.levels.ERROR then
---         vim.api.nvim_err_writeln(msg)
---     else
---     vim.api.nvim_echo({{msg}}, true, {})end
--- end
+Color = 2
+
+
+
 
 -- clear cmd after execution
 vim.api.nvim_create_autocmd("CmdlineLeave", {
