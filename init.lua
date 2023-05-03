@@ -1,4 +1,4 @@
--- require("plugins")
+require("plugins")
 require("remap")
 
 
@@ -22,6 +22,7 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 })
 
 local options = {
+  modifiable = true,
   incsearch = true,
   backup = false,                          -- creates a backup file
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
@@ -60,7 +61,9 @@ local options = {
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
   laststatus = 3,
   -- hl-WinSeparator-guibg = None,
+  -- splitbelow splitright,
 }
+
 for k, v in pairs(options) do
   vim.opt[k] = v
 end

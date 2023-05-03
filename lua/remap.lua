@@ -9,8 +9,6 @@ vim.keymap.set('n', '<c-s>', "<cmd>w!<CR>")  -- Ctrl + s ==> save current file
 vim.keymap.set('n', '<space>so', ':so %<CR>')  -- space + s + o ==> Source Current File
 vim.keymap.set('n', '<space>hl', vim.cmd.nohl)  -- space + s + o ==> Source Current File
 
-vim.keymap.set('n', '<space>ps', ':PackerSync<CR>')  -- space + p + s ==> Packer Sync
-
 vim.keymap.set('n', '<space>n', ':NvimTreeFocus<CR>')  -- space + n ==> Focus NvimTree
 vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>')  -- Ctrl + n ==> Toggle NvimTree
 
