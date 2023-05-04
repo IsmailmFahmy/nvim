@@ -9,7 +9,8 @@
 --     3 -> rose-pine
 --     4 -> dracula
 
-Color = 1
+Color = 2
+
 
 
 
@@ -28,9 +29,17 @@ elseif (Color == 4 ) then
   Color = 'dracula'
 end
 
+
+
 vim.opt.background = "dark"
 
 vim.cmd.colorscheme(Color)
+if (Color == 'gruvbox')
+  then
+	 require('gruvbox').setup({
+		disable_background = true
+	 })
+  end
 if (Color == 'rose-pine')
   then
   require('rose-pine').setup({

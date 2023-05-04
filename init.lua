@@ -55,12 +55,18 @@ local options = {
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
   laststatus = 3,
   -- hl-WinSeparator-guibg = None,
-  -- splitbelow splitright,
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.cmd([[
+  set splitbelow splitright
+  hi vertsplit guibg=NONE
+]])
+
+
 
 -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
 vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
