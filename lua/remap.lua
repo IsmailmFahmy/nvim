@@ -14,7 +14,10 @@ vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>', { silent = true })  
 
 vim.keymap.set('n', '<c-G>', ":echo expand('%:p')<CR>", { silent = true })
 
-vim.api.nvim_set_keymap('','<c-_>' ,'gcc',{noremap = false, silent = true}) -- Ctrl + / ==> comment
+vim.api.nvim_set_keymap('v','<c-_>' ,'gc',{noremap = false, silent = true}) -- Ctrl + / ==> comment
+vim.api.nvim_set_keymap('v','<c-/>' ,'gc',{noremap = false, silent = true}) -- Ctrl + / ==> comment
+vim.api.nvim_set_keymap('n','<c-_>' ,'gcc',{noremap = false, silent = true}) -- Ctrl + / ==> comment
+vim.api.nvim_set_keymap('n','<c-/>' ,'gcc',{noremap = false, silent = true}) -- Ctrl + / ==> comment
 
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",{ silent = true, noremap = true })
 
