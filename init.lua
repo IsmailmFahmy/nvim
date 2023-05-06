@@ -7,10 +7,12 @@ require("remap")
 
 
 -- clear cmd after execution
+local group  = vim.api.nvim_create_augroup("clear", {clear = true})
 vim.api.nvim_create_autocmd("CmdlineLeave", {
 	callback = function()
+		group = "clear",
 		vim.fn.timer_start(3000, function()
-			print(" ")
+		  vim.cmd [[ echon ' ' ]]
 		end)
 	end
 })
