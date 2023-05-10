@@ -9,7 +9,7 @@
 --     3 -> rose-pine
 --     4 -> dracula
 
-Color = 3
+Color = 4
 
 
 

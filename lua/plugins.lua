@@ -107,12 +107,15 @@ require('lazy').setup({
 		 -- {"folke/which-key.nvim"},
 
    -- Barbecue
-	  {"utilyre/barbecue.nvim",
+	  {
+		 "utilyre/barbecue.nvim",
 		 name = "barbecue",
 		 version = "*",
-		 dependencies = {"SmiteshP/nvim-navic"},
-	  },
-
+		 dependencies = {
+			"SmiteshP/nvim-navic",
+		 },
+		 opts = {},
+	  }
 -------------------------------------------------------------
  })
 require("lazy").setup(plugins, opts)
