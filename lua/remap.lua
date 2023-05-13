@@ -6,6 +6,8 @@ vim.keymap.set('n', '<c-l>', vim.cmd.bn, { silent = true })  -- Ctrl + l ==> nex
 vim.keymap.set('n', '<c-h>', vim.cmd.bp, { silent = true })  -- Ctrl + h ==> previous buffer
 vim.keymap.set('n', '<c-q>', "<cmd>SmartQ!<CR>", { silent = true })  -- Ctrl + w ==> close current buffer
 vim.keymap.set('n', '<c-s>', "<cmd>w!<CR>", { silent = true })  -- Ctrl + s ==> save current file
+vim.keymap.set('n', '<leader>ss', ":mksession! ~/.cache/vim_lastsession.vim<CR>")  -- Space + s + s ==> save current session
+vim.keymap.set('n', '<leader>rs', ":source ~/.cache/vim_lastsession.vim<CR>")  -- Space + r + s ==> resotre last session
 vim.keymap.set('n', '<space>so', ':so %<CR>', { silent = true })  -- space + s + o ==> Source Current File
 vim.keymap.set('n', '<space>hl', vim.cmd.nohl, { silent = true })  -- space + s + o ==> Source Current File
 

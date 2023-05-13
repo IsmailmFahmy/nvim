@@ -32,7 +32,7 @@ lsp.set_preferences({
     sign_icons = {
         error = '',
         warn = '',
-        hint = '',
+        hint = "",
         info = ''
     }
 })
@@ -40,7 +40,7 @@ lsp.set_preferences({
 lsp.set_sign_icons({
    error = '',
    warn = '',
-   hint = '',
+   hint = "",
    info = ''
 })
 

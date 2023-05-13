@@ -56,7 +56,7 @@ lualine.setup({
 		lualine_a = {},
 		lualine_b = {},
 		lualine_c = { "filename" },
-    lualine_x = {function() return "" end},
+    lualine_x = {function() return "󰄛" end},
 		lualine_y = {},
 		lualine_z = {},
 	},

@@ -8,8 +8,9 @@
 --     2 -> gruvbox
 --     3 -> rose-pine
 --     4 -> dracula
+--     5 -> catppuccin
 
-Color = 4
+Color = 5
 
 
 
@@ -27,6 +28,8 @@ elseif (Color == 3 ) then
   Color = 'rose-pine'
 elseif (Color == 4 ) then
   Color = 'dracula'
+elseif (Color == 5 ) then
+  Color = 'catppuccin'
 end
 
 
@@ -34,10 +37,17 @@ end
 vim.opt.background = "dark"
 
 vim.cmd.colorscheme(Color)
-if (Color == 'gruvbox')
+if (Color == 'catppuccin')
   then
-	 require('gruvbox').setup({
-		disable_background = true
+	 require('catppuccin').setup({
+    transparent_background = true,
+    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+    term_colors = false,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
+    }
 	 })
   end
 if (Color == 'rose-pine')

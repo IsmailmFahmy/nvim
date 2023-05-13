@@ -24,6 +24,7 @@ require('lazy').setup({
 		 {'rose-pine/neovim'},
 		 {'xiyaowong/transparent.nvim'},
 		 {'Mofiqul/dracula.nvim'},
+		 { "catppuccin/nvim", name = "catppuccin" },
 
     -- Zenmode
          {"folke/zen-mode.nvim",
@@ -74,7 +75,7 @@ require('lazy').setup({
 			 {'L3MON4D3/LuaSnip'},
 			 {'rafamadriz/friendly-snippets'},
 		 },
-	 },
+	  },
 
 
 	-- Alpha Dashboard
@@ -85,7 +86,7 @@ require('lazy').setup({
 		end },
 
 	-- Better indents
-		 {"lukas-reineke/indent-blankline.nvim"},
+		 -- {"lukas-reineke/indent-blankline.nvim"},
 
 	-- Buffer Line // Tabs
 		 {"akinsho/bufferline.nvim"},
@@ -107,13 +108,10 @@ require('lazy').setup({
 		 -- {"folke/which-key.nvim"},
 
    -- Barbecue
-	  {
-		 "utilyre/barbecue.nvim",
+	  {"utilyre/barbecue.nvim",
 		 name = "barbecue",
 		 version = "*",
-		 dependencies = {
-			"SmiteshP/nvim-navic",
-		 },
+		 dependencies = {"SmiteshP/nvim-navic"},
 		 opts = {},
 	  }
 -------------------------------------------------------------
