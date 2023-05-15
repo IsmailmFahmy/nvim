@@ -113,7 +113,15 @@ require('lazy').setup({
 		 version = "*",
 		 dependencies = {"SmiteshP/nvim-navic"},
 		 opts = {},
-	  }
+	  },
+
+   -- Tab out of brackets
+    {"abecodes/tabout.nvim"},
+
+   -- Autoclose brackets
+    {"windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+    },
 -------------------------------------------------------------
  })
 require("lazy").setup(plugins, opts)

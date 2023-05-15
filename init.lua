@@ -11,7 +11,7 @@ local group  = vim.api.nvim_create_augroup("clear", {clear = true})
 vim.api.nvim_create_autocmd("CmdlineLeave", {
     callback = function()
         group = "clear",
-        vim.fn.timer_start(3000, function()
+        vim.fn.timer_start(4000, function()
             vim.cmd [[ echon ' ' ]]
         end)
     end
