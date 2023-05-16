@@ -115,9 +115,6 @@ require('lazy').setup({
 		 opts = {},
 	  },
 
-   -- Tab out of brackets
-    {"abecodes/tabout.nvim"},
-
    -- Autoclose brackets
     {"windwp/nvim-autopairs",
       config = function() require("nvim-autopairs").setup {} end
