@@ -1,4 +1,4 @@
-
+vim.opt.background = "dark"
 
 
 
@@ -32,30 +32,29 @@ elseif (Color == 5 ) then
   Color = 'catppuccin'
 end
 
-
-
-vim.opt.background = "dark"
-
 vim.cmd.colorscheme(Color)
-if (Color == 'catppuccin')
-  then
-	 require('catppuccin').setup({
-    transparent_background = true,
-    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
-    term_colors = false,
-    dim_inactive = {
-        enabled = false,
-        shade = "dark",
-        percentage = 0.15,
-    }
-	 })
-  end
-if (Color == 'rose-pine')
-  then
-  require('rose-pine').setup({
-     disable_background = true
-	})
-	end
+
+
+
+-- if (Color == 'catppuccin')
+--   then
+-- 	 require('catppuccin').setup({
+--     transparent_background = true,
+--     show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+--     term_colors = false,
+--     dim_inactive = {
+--         enabled = false,
+--         shade = "dark",
+--         percentage = 0.15,
+--     }
+-- 	 })
+--   end
+-- if (Color == 'rose-pine')
+--   then
+--   require('rose-pine').setup({
+--      disable_background = true
+-- 	})
+-- 	end
 
 function ColorMyPencils()
 
