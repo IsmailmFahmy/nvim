@@ -1,16 +1,21 @@
-vim.opt.background = "dark"
 
 
 
+Color = 2
+-- Transparent = true
 
 
---     1 -> oxocarbon
---     2 -> gruvbox
---     3 -> rose-pine
---     4 -> dracula
---     5 -> catppuccin
 
-Color = 5
+--[[
+
+                    1 -> oxocarbon
+                    2 -> gruvbox
+                    3 -> rose-pine
+                    4 -> dracula
+                    5 -> catppuccin
+
+--]]
+
 
 
 
@@ -20,6 +25,7 @@ Color = 5
 
 
 ------------------------------------------------------------------------------------
+
 if (Color == 1 ) then
   Color = 'oxocarbon'
 elseif (Color == 2 ) then
@@ -32,33 +38,52 @@ elseif (Color == 5 ) then
   Color = 'catppuccin'
 end
 
+
+
+
+
 vim.cmd.colorscheme(Color)
+vim.opt.background = "dark"
 
 
-
--- if (Color == 'catppuccin')
---   then
--- 	 require('catppuccin').setup({
---     transparent_background = true,
---     show_end_of_buffer = false, -- show the '~' characters after the end of buffers
---     term_colors = false,
---     dim_inactive = {
---         enabled = false,
---         shade = "dark",
---         percentage = 0.15,
---     }
--- 	 })
---   end
--- if (Color == 'rose-pine')
---   then
---   require('rose-pine').setup({
---      disable_background = true
--- 	})
--- 	end
 
 function ColorMyPencils()
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
 
+    -- GRUVBOX TRANSPARENT MODE
+    if (Color == 'catppuccin') then
+        require('catppuccin').setup({
+            transparent_background = true
+        })
+    end
+
+    -- ROSE PINE TRANSPARENT MODE
+    if (Color == 'rose-pine')
+        then
+            require('rose-pine').setup({
+                disable_background = true
+            })
+        end
+
+        -- DRACULA TRANSPARENT MODE
+        if (Color == 'dracula') then
+            require("dracula").setup({
+                transparent_bg = true
+            })
+        end
+
+        -- GRUVBOX TRANSPARENT MODE
+        if (Color == 'gruvbox') then
+            require("gruvbox").setup({
+                transparent_mode = true
+            })
+        end
+
+end
+
+if (Transparent == true) then
+   ColorMyPencils()
 end

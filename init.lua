@@ -5,10 +5,13 @@ require("remap")
 
 
 
-
+-- Faster loading
 vim.loader.enable()
+
 -- clear cmd after execution
 local group  = vim.api.nvim_create_augroup("clear", {clear = true})
+
+
 vim.api.nvim_create_autocmd("CmdlineLeave", {
     callback = function()
         group = "clear",
@@ -17,7 +20,13 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
         end)
     end
 })
+
+
+-- ADD Transparent Command to nvim
+vim.api.nvim_create_user_command('Transparent', 'lua ColorMyPencils()', {})
+
 vim.api.nvim_create_autocmd("ExitPre", {pattern = "*", group = "clear", command = "mksession! ~/.cache/vim_lastsession.vim"})
+
 local options = {
     modifiable = true,
     incsearch = true,
@@ -41,7 +50,7 @@ local options = {
     timeoutlen = 300,                        -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true,                         -- enable persistent undo
     updatetime = 300,                        -- faster completion (4000ms default)
-    writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+    writebackup = false,                     -- if a file is being edited by another program it is not allowed to be edited
     expandtab = true,                        -- convert tabs to spaces
     shiftwidth = 4,                          -- the number of spaces inserted for each indentation
     tabstop = 3,                             -- insert 2 spaces for a tab
@@ -57,13 +66,11 @@ local options = {
     guifont = "JetBrainsMonoNF Nerd Font",               -- the font used in graphical neovim applications
     whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
     laststatus = 3,
-    -- hl-WinSeparator-guibg = None,
 }
 
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
-
 vim.cmd([[
     set splitbelow splitright
     hi vertsplit guibg=NONE
@@ -75,4 +82,4 @@ vim.cmd([[
 vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
--- vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
+vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
