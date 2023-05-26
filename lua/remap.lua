@@ -4,7 +4,7 @@ vim.keymap.set('v','<', '<gv', { silent = true })
 vim.keymap.set('v','>', '>gv', { silent = true })
 vim.keymap.set('n', '<c-l>', vim.cmd.bn, { silent = true })  -- Ctrl + l ==> next buffer
 vim.keymap.set('n', '<c-h>', vim.cmd.bp, { silent = true })  -- Ctrl + h ==> previous buffer
-vim.keymap.set('n', '<c-q>', "<cmd>SmartQ!<CR>", { silent = true })  -- Ctrl + w ==> close current buffer
+-- vim.keymap.set('n', '<c-q>', "<cmd>SmartQ!<CR>", { silent = true })  -- Ctrl + w ==> close current buffer
 vim.keymap.set('n', '<c-s>', "<cmd>w!<CR>", { silent = true })  -- Ctrl + s ==> save current file
 vim.keymap.set('n', '<leader>ss', ":mksession! ~/.cache/vim_lastsession.vim<CR>")  -- Space + s + s ==> save current session
 vim.keymap.set('n', '<leader>rs', ":source ~/.cache/vim_lastsession.vim<CR>")  -- Space + r + s ==> resotre last session
@@ -52,7 +52,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { silent = true })
 vim.keymap.set({"v"}, "Y", [["+y]], { silent = true })
 
 
-vim.keymap.set("n", "Q", "<nop>", { silent = true })
+-- vim.keymap.set("n", "Q", "<nop>", { silent = true })
 
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = true })

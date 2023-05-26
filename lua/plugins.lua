@@ -10,7 +10,8 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require('lazy').setup({
+
+local plugins = {
 -------------------------------------------------------------
 
 	-- Faster Startup
@@ -119,5 +120,6 @@ require('lazy').setup({
       config = function() require("nvim-autopairs").setup {} end
     },
 -------------------------------------------------------------
- })
+ }
+ local opts = {}
 require("lazy").setup(plugins, opts)
