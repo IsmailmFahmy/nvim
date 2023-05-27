@@ -119,6 +119,8 @@ local plugins = {
     {"windwp/nvim-autopairs",
       config = function() require("nvim-autopairs").setup {} end
     },
+   -- CSS Colors
+   {"ap/vim-css-color"},
 -------------------------------------------------------------
  }
  local opts = {}
