@@ -1,7 +1,7 @@
 
 
 
-Color = 2
+Color = 3
 -- Transparent = true
 
 

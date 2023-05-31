@@ -108,19 +108,24 @@ local plugins = {
 		 -- {"folke/which-key.nvim"},
 
    -- Barbecue
-	  {"utilyre/barbecue.nvim",
-		 name = "barbecue",
-		 version = "*",
-		 dependencies = {"SmiteshP/nvim-navic"},
-		 opts = {},
-	  },
+       {"utilyre/barbecue.nvim",
+       name = "barbecue",
+       dependencies = {"SmiteshP/nvim-navic"},
+       opts = {},
+         },
 
    -- Autoclose brackets
-    {"windwp/nvim-autopairs",
-      config = function() require("nvim-autopairs").setup {} end
-    },
+       {"windwp/nvim-autopairs",
+       config = function() require("nvim-autopairs").setup {} end
+        },
    -- CSS Colors
-   {"ap/vim-css-color"},
+       {"ap/vim-css-color"},
+   -- Nvim Surround
+       {"kylechui/nvim-surround",
+           event = "VeryLazy",
+           config = function()
+               require("nvim-surround").setup({}) end
+       }
 -------------------------------------------------------------
  }
  local opts = {}
