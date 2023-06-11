@@ -1,136 +1,133 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
--------------------------------------------------------------
+    -------------------------------------------------------------
 
-	-- Faster Startup
-		 {"nathom/filetype.nvim"},
-		 {'dstein64/vim-startuptime'},
+    -- Faster Startup
+    {"nathom/filetype.nvim"},
+    {'dstein64/vim-startuptime'},
 
-	-- ColorSchemes
-		 {"ellisonleao/gruvbox.nvim" },
-		 {'nyoom-engineering/oxocarbon.nvim'},
-		 {'rose-pine/neovim'},
-		 {'xiyaowong/transparent.nvim'},
-		 {'Mofiqul/dracula.nvim'},
-		 { "catppuccin/nvim", name = "catppuccin" },
+    -- ColorSchemes
+    {"ellisonleao/gruvbox.nvim" },
+    {'nyoom-engineering/oxocarbon.nvim'},
+    {'rose-pine/neovim'},
+    {'xiyaowong/transparent.nvim'},
+    {'Mofiqul/dracula.nvim'},
+    { "catppuccin/nvim", name = "catppuccin" },
 
     -- Zenmode
-         {"folke/zen-mode.nvim",
-            config = function()
-                require("zen-mode").setup{}
-            end },
+    {"folke/zen-mode.nvim",
+    config = function()
+        require("zen-mode").setup{}
+    end },
 
-   -- Rust
-		 {'rust-lang/rust.vim'},
+    -- Rust
+    -- {'rust-lang/rust.vim'},
 
-	-- Telescope
-		 {'nvim-telescope/telescope.nvim',
-		dependencies = { {'nvim-lua/plenary.nvim'} }},
+    -- Telescope
+    {'nvim-telescope/telescope.nvim',
+    dependencies = { {'nvim-lua/plenary.nvim'} }},
 
     -- Trouble
-      {"folke/trouble.nvim",
-          config = function()
-              require("trouble").setup{1}
-          end },
+    {"folke/trouble.nvim",
+    config = function()
+        require("trouble").setup{1}
+    end },
 
-	-- Nvim-Tree
-        {"nvim-neo-tree/neo-tree.nvim",
-          dependencies = {
-          "nvim-lua/plenary.nvim",
-          "MunifTanjim/nui.nvim",}
+    -- Nvim-Tree
+    {"nvim-neo-tree/neo-tree.nvim",
+    dependencies = {"MunifTanjim/nui.nvim"}},
+
+    -- Lua Line
+    {'nvim-lualine/lualine.nvim'},
+
+    -- Tree-Stitter
+    {'nvim-treesitter/nvim-treesitter'},
+
+    -- LSP Support
+    {'VonHeikemen/lsp-zero.nvim',
+    dependencies = {
+        -- LSP Support
+        {'neovim/nvim-lspconfig'},
+        {'williamboman/mason.nvim'},
+        {'williamboman/mason-lspconfig.nvim'},
+
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},
+        {'hrsh7th/cmp-buffer'},
+        {'hrsh7th/cmp-path'},
+        {'saadparwaiz1/cmp_luasnip'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'hrsh7th/cmp-nvim-lua'},
+
+        -- Snippets
+        {'L3MON4D3/LuaSnip'},
+        {'rafamadriz/friendly-snippets'},
+    },
     },
 
-	-- Lua Line
-		 {'nvim-lualine/lualine.nvim'},
 
-	-- Tree-Stitter
-		 {'nvim-treesitter/nvim-treesitter'},
+    -- Alpha Dashboard
+    {'goolord/alpha-nvim',
+    dependencies = { 'kyazdani42/nvim-web-devicons'}},
 
-   -- LSP Support
-	  {'VonHeikemen/lsp-zero.nvim',
-		 branch = 'v1.x',
-		 dependencies = {
-			 -- LSP Support
-			 {'neovim/nvim-lspconfig'},
-			 {'williamboman/mason.nvim'},
-			 {'williamboman/mason-lspconfig.nvim'},
+    -- Better indents
+    {"lukas-reineke/indent-blankline.nvim"},
 
-			 -- Autocompletion
-			 {'hrsh7th/nvim-cmp'},
-			 {'hrsh7th/cmp-buffer'},
-			 {'hrsh7th/cmp-path'},
-			 {'saadparwaiz1/cmp_luasnip'},
-			 {'hrsh7th/cmp-nvim-lsp'},
-			 {'hrsh7th/cmp-nvim-lua'},
+    -- Buffer Line // Tabs
+    {"akinsho/bufferline.nvim"},
 
-			 -- Snippets
-			 {'L3MON4D3/LuaSnip'},
-			 {'rafamadriz/friendly-snippets'},
-		 },
-	  },
+    -- Comments
+    {'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end},
+    {"JoosepAlviste/nvim-ts-context-commentstring"},
 
+    -- Toggle Terminal
+    {"akinsho/toggleterm.nvim"},
 
-	-- Alpha Dashboard
-		 {'goolord/alpha-nvim',
-		dependencies = { 'kyazdani42/nvim-web-devicons' },
-		config = function ()
-			require'alpha'.setup(require'alpha.themes.startify'.config)
-		end },
+    -- SmartQ
+    {'marklcrns/vim-smartq'},
+    -- Edgy
+    {"folke/edgy.nvim"},
 
-	-- Better indents
-		 -- {"lukas-reineke/indent-blankline.nvim"},
+    -- Which-Key
+    -- {"folke/which-key.nvim"},
 
-	-- Buffer Line // Tabs
-		 {"akinsho/bufferline.nvim"},
+    -- Barbecue
+    {"utilyre/barbecue.nvim",
+    name = "barbecue",
+    dependencies = {"SmiteshP/nvim-navic"},
+    },
 
-	-- Comments
-		 {'numToStr/Comment.nvim',
-			  config = function()
-				  require('Comment').setup()
-			  end},
-		 {"JoosepAlviste/nvim-ts-context-commentstring"},
+    -- Autoclose brackets
+    {"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+    },
 
-	-- Toggle Terminal
-		 {"akinsho/toggleterm.nvim"},
+     -- CSS Colors
+     {"ap/vim-css-color"},
 
-	-- SmartQ
-	    {'marklcrns/vim-smartq'},
-
-	-- Which-Key
-		 -- {"folke/which-key.nvim"},
-
-   -- Barbecue
-       {"utilyre/barbecue.nvim",
-       name = "barbecue",
-       dependencies = {"SmiteshP/nvim-navic"},
-       opts = {},
-         },
-
-   -- Autoclose brackets
-       {"windwp/nvim-autopairs",
-       config = function() require("nvim-autopairs").setup {} end
-        },
-   -- CSS Colors
-       {"ap/vim-css-color"},
-   -- Nvim Surround
-       {"kylechui/nvim-surround",
-           event = "VeryLazy",
-           config = function()
-               require("nvim-surround").setup({}) end
-       }
+     -- Nvim Surround
+     {"kylechui/nvim-surround",
+     event = "VeryLazy",
+     config = function()
+         require("nvim-surround").setup({}) end
+     },
 -------------------------------------------------------------
- }
+
+}
  local opts = {}
-require("lazy").setup(plugins, opts)
+ require("lazy").setup(plugins, opts)
