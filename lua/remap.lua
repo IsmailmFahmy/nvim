@@ -11,8 +11,8 @@ vim.keymap.set('n', '<leader>rs', ":source ~/.cache/vim_lastsession.vim<CR>")  -
 vim.keymap.set('n', '<space>so', ':so %<CR>', { silent = true })  -- space + s + o ==> Source Current File
 vim.keymap.set('n', '<space>hl', vim.cmd.nohl, { silent = true })  -- space + s + o ==> Source Current File
 
-vim.keymap.set('n', '<space>n', ':NvimTreeFocus<CR>', { silent = true })  -- space + n ==> Focus NvimTree
-vim.keymap.set('n', '<c-n>', ':NvimTreeFindFileToggle<CR>', { silent = true })  -- Ctrl + n ==> Toggle NvimTree
+vim.keymap.set('n', '<space>n', ':NeoTreeFocus<CR>', { silent = true })  -- space + n ==> Focus NvimTree
+vim.keymap.set('n', '<c-n>', ':NeoTreeFocusToggle<CR>', { silent = true })  -- Ctrl + n ==> Toggle NvimTree
 
 vim.keymap.set('n', '<c-G>', ":echo expand('%:p')<CR>", { silent = true })
 

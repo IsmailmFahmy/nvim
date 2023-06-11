@@ -2,7 +2,6 @@
 
 
 Color = 3
--- Transparent = true
 
 
 
@@ -82,8 +81,4 @@ function ColorMyPencils()
             })
         end
 
-end
-
-if (Transparent == true) then
-   ColorMyPencils()
 end

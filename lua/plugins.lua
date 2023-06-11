@@ -46,7 +46,11 @@ local plugins = {
           end },
 
 	-- Nvim-Tree
-		 {'nvim-tree/nvim-tree.lua'},
+        {"nvim-neo-tree/neo-tree.nvim",
+          dependencies = {
+          "nvim-lua/plenary.nvim",
+          "MunifTanjim/nui.nvim",}
+    },
 
 	-- Lua Line
 		 {'nvim-lualine/lualine.nvim'},
