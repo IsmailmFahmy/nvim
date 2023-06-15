@@ -3,10 +3,10 @@
 ## Install
 ### Linux
 ```bash
-gh repo clone "IsmailmFahmy/nvim_config" ~/.config/nvim
+gh repo clone "IsmailmFahmy/nvim" ~/.config/nvim
 ```
 ### Windows
 
 ```pwsh
-gh repo clone "IsmailmFahmy/nvim_config" $env:localappdata\nvim\
+gh repo clone "IsmailmFahmy/nvim" $env:localappdata\nvim\
 ```
