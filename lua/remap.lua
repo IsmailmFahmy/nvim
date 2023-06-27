@@ -52,7 +52,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]], { silent = true })
 vim.keymap.set({"v"}, "Y", [["+y]], { silent = true })
 
 
--- vim.keymap.set("n", "Q", "<nop>", { silent = true })
+vim.keymap.set("n", "q", "<nop>", { silent = true })
 
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = true })

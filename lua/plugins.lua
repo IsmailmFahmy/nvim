@@ -15,7 +15,6 @@ local plugins = {
     -------------------------------------------------------------
 
     -- Faster Startup
-    {"nathom/filetype.nvim"},
     {'dstein64/vim-startuptime'},
 
     -- ColorSchemes
