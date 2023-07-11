@@ -4,6 +4,7 @@ require("remap")
 
 
 
+-- let g:Hexokinase_highlighters = ['backgroundfull']
 
 -- Faster loading
 vim.loader.enable()
@@ -29,7 +30,7 @@ vim.api.nvim_create_user_command('Rc', 'e $MYVIMRC', {})
 -- vim.api.nvim_create_autocmd("ExitPre", {pattern = "*", group = "clear", command = "mksession! ~/.cache/vim_lastsession.vim"})
 
 local options = {
-    -- modifiable = true,
+    modifiable = true,
     incsearch = true,
     backup = false,                          -- creates a backup file
     cmdheight = 1,                           -- more space in the neovim command line for displaying messages

@@ -1,7 +1,7 @@
 
 
 
-Color = 3
+Color = 2
 
 
 
