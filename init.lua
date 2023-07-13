@@ -6,6 +6,8 @@ require("remap")
 
 -- let g:Hexokinase_highlighters = ['backgroundfull']
 
+
+
 -- Faster loading
 vim.loader.enable()
 
@@ -76,6 +78,7 @@ end
 vim.cmd([[
     set splitbelow splitright
     hi vertsplit guibg=NONE
+    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 ]])
 
 
