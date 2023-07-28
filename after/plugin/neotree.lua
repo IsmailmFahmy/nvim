@@ -62,9 +62,12 @@ neotree.setup({
     },
   },
   -- Other options ...
-          buffers = {
-          follow_current_file = true, -- This will find and focus the file in the active buffer every
                                        -- time the current file is changed while the tree is open.
+        buffers = {
+          follow_current_file = {
+            enabled = true, -- This will find and focus the file in the active buffer every time
+            --              -- the current file is changed while the tree is open.
+          leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
           group_empty_dirs = true, -- when true, empty folders will be grouped together
           show_unloaded = true,
           window = {
@@ -72,6 +75,7 @@ neotree.setup({
               ["bd"] = "buffer_delete",
               ["h"] = "navigate_up",
               ["."] = "set_root",
+      },
             }
           },
         },
