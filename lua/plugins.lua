@@ -32,7 +32,7 @@ local plugins = {
     end },
 
     -- Rust
-    -- {'rust-lang/rust.vim'},
+    {'rust-lang/rust.vim'},
 
     -- Telescope
     {'nvim-telescope/telescope.nvim',
@@ -41,7 +41,7 @@ local plugins = {
     -- Trouble
     {"folke/trouble.nvim",
     config = function()
-        require("trouble").setup{1}
+        require("trouble").setup{}
     end },
 
     -- Nvim-Tree
@@ -55,27 +55,33 @@ local plugins = {
     {'nvim-treesitter/nvim-treesitter'},
 
     -- LSP Support
-    {'VonHeikemen/lsp-zero.nvim',
-    dependencies = {
-        -- LSP Support
-        {'neovim/nvim-lspconfig'},
-        {'williamboman/mason.nvim'},
-        {'williamboman/mason-lspconfig.nvim'},
+    --  {'VonHeikemen/lsp-zero.nvim',
+    --  dependencies = {
+    --     -- LSP Support
+    --
+    --     -- Autocompletion
+    --
+    --     -- Snippets
+    --     {'L3MON4D3/LuaSnip'},
+    --     {'rafamadriz/friendly-snippets'},
+    --  },
+    -- },
 
-        -- Autocompletion
+    {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    },
         {'hrsh7th/nvim-cmp'},
         {'hrsh7th/cmp-buffer'},
         {'hrsh7th/cmp-path'},
         {'saadparwaiz1/cmp_luasnip'},
         {'hrsh7th/cmp-nvim-lsp'},
         {'hrsh7th/cmp-nvim-lua'},
-
-        -- Snippets
         {'L3MON4D3/LuaSnip'},
         {'rafamadriz/friendly-snippets'},
-    },
-    },
 
+     {"ibhagwan/fzf-lua"},
 
     -- Alpha Dashboard
     {'goolord/alpha-nvim',

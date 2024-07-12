@@ -3,6 +3,7 @@ if not status_ok then
 	return
 
 configs.setup {
+    auto_install = true,
   ensure_installed = { "bash", "c", "javascript", "lua", "python", "css", "rust", "java"}, -- one of "all" or a list of languages
 	ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
 	highlight = {

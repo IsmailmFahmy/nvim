@@ -21,7 +21,7 @@ vim.api.nvim_set_keymap('v','<c-/>' ,'gc',{noremap = false, silent = true}) -- C
 vim.api.nvim_set_keymap('n','<c-_>' ,'gcc',{noremap = false, silent = true}) -- Ctrl + / ==> comment
 vim.api.nvim_set_keymap('n','<c-/>' ,'gcc',{noremap = false, silent = true}) -- Ctrl + / ==> comment
 
-vim.keymap.set("n", "<leader>t", ":TroubleToggle<cr>",{ silent = true, noremap = true })
+vim.keymap.set("n", "<leader>t", ":Trouble diagnostics toggle focus=true<cr>",{ silent = true, noremap = true })
 
 
 
