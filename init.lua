@@ -4,9 +4,10 @@ require("remap")
 
 
 
--- let g:Hexokinase_highlighters = ['backgroundfull']
 
 
+
+vim.cmd("colorscheme dracula")
 
 -- Faster loading
 vim.loader.enable()

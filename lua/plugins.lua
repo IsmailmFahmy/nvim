@@ -31,12 +31,19 @@ local plugins = {
         require("zen-mode").setup{}
     end },
 
+    -- Undo Tree
+    {'mbbill/undotree'},
+
+    -- Better UI
+    {'stevearc/dressing.nvim'},
+
     -- Rust
     {'rust-lang/rust.vim'},
 
     -- Telescope
     {'nvim-telescope/telescope.nvim',
     dependencies = { {'nvim-lua/plenary.nvim'} }},
+    {'nvim-telescope/telescope-ui-select.nvim' },
 
     -- Trouble
     {"folke/trouble.nvim",
