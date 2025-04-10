@@ -1,6 +1,6 @@
 
 
-Color = 3
+Color = 5
 
 
 
@@ -10,7 +10,7 @@ Color = 3
                     2 -> gruvbox
                     3 -> rose-pine
                     4 -> dracula
-                    5 -> catppuccin
+                    5 -> catppuccin-macchiato
 
 --]]
 
@@ -33,7 +33,7 @@ elseif (Color == 3 ) then
 elseif (Color == 4 ) then
   Color = 'dracula'
 elseif (Color == 5 ) then
-  Color = 'catppuccin'
+  Color = 'catppuccin-macchiato'
 end
 
 

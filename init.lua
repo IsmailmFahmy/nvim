@@ -1,13 +1,13 @@
 require("plugins")
 require("remap")
+-- ~/.config/nvim
 
 
 
 
 
 
-
-vim.cmd("colorscheme dracula")
+vim.cmd("colorscheme catppuccin-macchiato")
 
 -- Faster loading
 vim.loader.enable()
@@ -68,7 +68,7 @@ local options = {
     linebreak = true,                        -- companion to wrap, don't split words
     scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
     sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
-    guifont = "JetBrainsMonoNF Nerd Font",               -- the font used in graphical neovim applications
+    guifont = "JetBrainsMonoNF Nerd Font",   -- the font used in graphical neovim applications
     whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
     laststatus = 3,
 }
@@ -85,8 +85,11 @@ vim.cmd([[
 
 
 
-vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
-vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
-vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
-vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
-vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
+vim.diagnostic.config({ virtual_text = true })          -- Add text next to errors from LSP
+
+
+vim.opt.shortmess = "ilmnrx"                            -- flags to shorten vim messages, see :help 'shortmess'
+vim.opt.shortmess:append "c"                            -- don't give |ins-completion-menu| messages
+vim.opt.iskeyword:append "-"                            -- hyphenated words recognized by searches
+vim.opt.formatoptions:remove({ "c", "r", "o" })         -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
+vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")   -- separate vim plugins from neovim in case vim still in use

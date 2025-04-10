@@ -25,12 +25,6 @@ local plugins = {
     {'Mofiqul/dracula.nvim'},
     { "catppuccin/nvim", name = "catppuccin" },
 
-    -- Zenmode
-    {"folke/zen-mode.nvim",
-    config = function()
-        require("zen-mode").setup{}
-    end },
-
     -- Undo Tree
     {'mbbill/undotree'},
 
@@ -38,22 +32,44 @@ local plugins = {
     {'stevearc/dressing.nvim'},
 
     -- Rust
-    {'rust-lang/rust.vim'},
+    {
+        'rust-lang/rust.vim',
+        ft = "rust"
+    },
+    {
+        'mrcjkb/rustaceanvim',
+        lazy = false, -- This plugin is already lazy
+    },
+    {
+        'saecki/crates.nvim',
+        tag = 'stable',
+        ft = "toml",
+    },
+
+
 
     -- Telescope
-    {'nvim-telescope/telescope.nvim',
-    dependencies = { {'nvim-lua/plenary.nvim'} }},
-    {'nvim-telescope/telescope-ui-select.nvim' },
+    {
+        'nvim-telescope/telescope.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        'nvim-telescope/telescope-ui-select.nvim',
+    },
+
 
     -- Trouble
-    {"folke/trouble.nvim",
-    config = function()
-        require("trouble").setup{}
-    end },
+    {
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup({})
+        end
+    },
 
     -- Nvim-Tree
-    {"nvim-neo-tree/neo-tree.nvim",
-    dependencies = {"MunifTanjim/nui.nvim"}},
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        dependencies = {"MunifTanjim/nui.nvim"}
+
+    },
 
     -- Lua Line
     {'nvim-lualine/lualine.nvim'},
@@ -61,38 +77,36 @@ local plugins = {
     -- Tree-Stitter
     {'nvim-treesitter/nvim-treesitter'},
 
-    -- LSP Support
-    --  {'VonHeikemen/lsp-zero.nvim',
-    --  dependencies = {
-    --     -- LSP Support
-    --
-    --     -- Autocompletion
-    --
-    --     -- Snippets
-    --     {'L3MON4D3/LuaSnip'},
-    --     {'rafamadriz/friendly-snippets'},
-    --  },
-    -- },
+
+    -- Snippets
+    {
+        'L3MON4D3/LuaSnip',
+        'rafamadriz/friendly-snippets',
+    },
+
+    -- Mason
+    {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    },
 
     {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+        'hrsh7th/nvim-cmp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'saadparwaiz1/cmp_luasnip',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-nvim-lua',
+        "ibhagwan/fzf-lua",
     },
-        {'hrsh7th/nvim-cmp'},
-        {'hrsh7th/cmp-buffer'},
-        {'hrsh7th/cmp-path'},
-        {'saadparwaiz1/cmp_luasnip'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'hrsh7th/cmp-nvim-lua'},
-        {'L3MON4D3/LuaSnip'},
-        {'rafamadriz/friendly-snippets'},
 
-     {"ibhagwan/fzf-lua"},
 
     -- Alpha Dashboard
-    {'goolord/alpha-nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons'}},
+    {
+        'goolord/alpha-nvim',
+        dependencies = { 'kyazdani42/nvim-web-devicons'}
+    },
 
     -- Better indents
     {"lukas-reineke/indent-blankline.nvim"},
@@ -101,10 +115,14 @@ local plugins = {
     {"akinsho/bufferline.nvim"},
 
     -- Comments
-    {'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end},
+    {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    },
+
+
     {"JoosepAlviste/nvim-ts-context-commentstring"},
 
     -- Toggle Terminal
@@ -112,21 +130,24 @@ local plugins = {
 
     -- SmartQ
     {'marklcrns/vim-smartq'},
+
     -- Edgy
     {"folke/edgy.nvim"},
 
-    -- Which-Key
-    -- {"folke/which-key.nvim"},
 
     -- Barbecue
-    {"utilyre/barbecue.nvim",
-    name = "barbecue",
-    dependencies = {"SmiteshP/nvim-navic"},
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        dependencies = {"SmiteshP/nvim-navic"},
+        config = function ()
+            require("barbecue").setup({})
+        end
     },
 
     -- Autoclose brackets
-    {"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    {
+        "windwp/nvim-autopairs",
     },
 
      -- CSS Colors
