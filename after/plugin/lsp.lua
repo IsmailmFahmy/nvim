@@ -12,10 +12,21 @@ require("mason-lspconfig").setup({
 })
 
 
-lspconfig.arduino_language_server.setup({})
-lspconfig.pyright.setup({})
-lspconfig.bashls.setup({})
-lspconfig.clangd.setup({})
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+lspconfig.arduino_language_server.setup({
+    capabilities = capabilities
+})
+lspconfig.pyright.setup({
+    capabilities = capabilities
+})
+lspconfig.bashls.setup({
+    capabilities = capabilities
+})
+lspconfig.clangd.setup({
+    capabilities = capabilities
+})
 
 lspconfig.lua_ls.setup {
     capabilities = capabilities,
@@ -29,6 +40,7 @@ lspconfig.lua_ls.setup {
     }
 }
 
+lspconfig.util.window_options = { border = 'double' }
 
 local config = require("fzf-lua.config")
 local actions = require("trouble.sources.fzf").actions

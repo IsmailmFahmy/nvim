@@ -11,7 +11,11 @@ vim.keymap.set('n', '<c-l>', vim.cmd.bn, { silent = true })  -- Ctrl + l ==> nex
 vim.keymap.set('n', '<c-h>', vim.cmd.bp, { silent = true })  -- Ctrl + h ==> previous buffer
 vim.keymap.set('i', '<c-v>', '<ESC>"+pa', { silent = true }) -- Ctrl + v (in insert mode) ==> paste system clipboard
 
-vim.keymap.set("n", "q", "<nop>", { silent = true })
+
+
+
+
+-- vim.keymap.set("n", "q", "<nop>", { silent = true })
 -- vim.keymap.set('n', '<c-s>', "<cmd>w!<CR>", { silent = true })                    -- Ctrl + s ==> save current file
 vim.keymap.set('n', '<leader>ss', ":mksession! ~/.cache/vim_lastsession.vim<CR>") -- Space + s + s ==> save current session
 vim.keymap.set('n', '<leader>rs', ":source ~/.cache/vim_lastsession.vim<CR>")     -- Space + r + s ==> resotre last session
@@ -98,8 +102,6 @@ vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 vim.keymap.set({'n', 'i'}, '<C-k>', vim.lsp.buf.signature_help, opts) -- Function Signature
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-
-
 
 
 

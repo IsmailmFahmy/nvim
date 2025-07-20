@@ -122,17 +122,9 @@ local plugins = {
         end
     },
 
-
-    {"JoosepAlviste/nvim-ts-context-commentstring"},
-
     -- Toggle Terminal
     {"akinsho/toggleterm.nvim"},
 
-    -- SmartQ
-    {'marklcrns/vim-smartq'},
-
-    -- Edgy
-    {"folke/edgy.nvim"},
 
 
     -- Barbecue
