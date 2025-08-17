@@ -6,15 +6,25 @@ require("mason-lspconfig").setup({
         'pyright',
         'rust_analyzer',
         'bashls',
-        'clangd'
+        'clangd',
+        'gitlab_ci_ls',
+        'yamlls',
     },
 
 })
 
 
 
+
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+
+lspconfig.gitlab_ci_ls.setup({
+    capabilities = capabilities
+})
+lspconfig.yamlls.setup({
+    capabilities = capabilities
+})
 lspconfig.arduino_language_server.setup({
     capabilities = capabilities
 })

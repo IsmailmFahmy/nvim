@@ -26,6 +26,12 @@ vim.api.nvim_create_autocmd("CmdlineLeave", {
 })
 
 
+vim.filetype.add({
+  pattern = {
+    ['%.gitlab%-ci%.ya?ml'] = 'yaml.gitlab',
+  },
+})
+
 -- ADD Transparent Command to nvim
 vim.api.nvim_create_user_command('Transparent', 'lua ColorMyPencils()', {})
 vim.api.nvim_create_user_command('Rc', 'e $MYVIMRC', {})
