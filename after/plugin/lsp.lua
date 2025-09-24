@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
         'rust_analyzer',
         'bashls',
         'clangd',
+        'terraformls',
         'gitlab_ci_ls',
         'yamlls',
     },
@@ -18,6 +19,12 @@ require("mason-lspconfig").setup({
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+
+lspconfig.terraformls.setup({
+    on_attach = on_attach,
+    flags = { debounce_text_changes = 150 },
+    capabilities = capabilities,
+})
 
 lspconfig.gitlab_ci_ls.setup({
     capabilities = capabilities
