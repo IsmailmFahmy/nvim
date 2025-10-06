@@ -47,7 +47,6 @@ local plugins = {
     },
 
 
-
     -- Telescope
     {
         'nvim-telescope/telescope.nvim',
@@ -84,7 +83,7 @@ local plugins = {
         'rafamadriz/friendly-snippets',
     },
 
-    -- Mason
+    -- Mason // LSP
     {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -99,6 +98,10 @@ local plugins = {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-nvim-lua',
         "ibhagwan/fzf-lua",
+    },
+
+    {
+        -- 'sheerun/vim-polyglot'
     },
 
 

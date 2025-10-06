@@ -99,7 +99,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>a', vim.lsp.buf.code_action, opts)
 
 
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts) -- 
 vim.keymap.set({'n', 'i'}, '<C-k>', vim.lsp.buf.signature_help, opts) -- Function Signature
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 

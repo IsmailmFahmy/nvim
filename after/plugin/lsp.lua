@@ -45,6 +45,15 @@ lspconfig.clangd.setup({
     capabilities = capabilities
 })
 
+
+lspconfig.util.window_options = { border = 'double' }
+
+local config = require("fzf-lua.config")
+local actions = require("trouble.sources.fzf").actions
+config.defaults.actions.files["ctrl-t"] = actions.open
+
+-- ========================= Custom LSP Configs =========================
+
 lspconfig.lua_ls.setup {
     capabilities = capabilities,
     settings = {
@@ -57,13 +66,6 @@ lspconfig.lua_ls.setup {
     }
 }
 
-lspconfig.util.window_options = { border = 'double' }
-
-local config = require("fzf-lua.config")
-local actions = require("trouble.sources.fzf").actions
-config.defaults.actions.files["ctrl-t"] = actions.open
-
-
 require('crates').setup({
     completion = {
         cmp = {
@@ -72,10 +74,5 @@ require('crates').setup({
     }
 })
 
-
-
-
-
-
-
-
+-- Keymaps: 
+-- ~/.config/nvim/lua/remap.lua
