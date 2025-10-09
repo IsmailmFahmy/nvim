@@ -1,52 +1,30 @@
-local lspconfig = require("lspconfig")
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = {
+local lsp_server_list = {
         'lua_ls',
+        'helm_ls',
         'pyright',
         'rust_analyzer',
         'bashls',
         'clangd',
         'terraformls',
+        'tflint',
         'gitlab_ci_ls',
         'yamlls',
-    },
+    }
 
-})
+require("mason").setup()
+require("mason-lspconfig").setup({ensure_installed = lsp_server_list})
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+for _, srvr in ipairs(lsp_server_list) do
+    vim.lsp.config(
+            srvr , {
+            capabilities = capabilities,
+            on_attach = on_attach
+            })
+end
 
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-
-lspconfig.terraformls.setup({
-    on_attach = on_attach,
-    flags = { debounce_text_changes = 150 },
-    capabilities = capabilities,
-})
-
-lspconfig.gitlab_ci_ls.setup({
-    capabilities = capabilities
-})
-lspconfig.yamlls.setup({
-    capabilities = capabilities
-})
-lspconfig.arduino_language_server.setup({
-    capabilities = capabilities
-})
-lspconfig.pyright.setup({
-    capabilities = capabilities
-})
-lspconfig.bashls.setup({
-    capabilities = capabilities
-})
-lspconfig.clangd.setup({
-    capabilities = capabilities
-})
-
-
-lspconfig.util.window_options = { border = 'double' }
 
 local config = require("fzf-lua.config")
 local actions = require("trouble.sources.fzf").actions
@@ -54,7 +32,7 @@ config.defaults.actions.files["ctrl-t"] = actions.open
 
 -- ========================= Custom LSP Configs =========================
 
-lspconfig.lua_ls.setup {
+vim.lsp.config('lua_ls', {
     capabilities = capabilities,
     settings = {
         Lua = {
@@ -64,7 +42,17 @@ lspconfig.lua_ls.setup {
             }
         }
     }
-}
+})
+
+
+vim.lsp.config('helm_ls', {
+    settings = {
+    ['helm-ls'] = {
+      yamlls = {
+        path = "yaml-language-server",
+      }   }
+  }
+})
 
 require('crates').setup({
     completion = {
