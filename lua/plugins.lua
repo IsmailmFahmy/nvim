@@ -101,9 +101,14 @@ local plugins = {
     },
 
     {
-        -- 'sheerun/vim-polyglot'
+        "qvalentin/helm-ls.nvim",
+        ft = "helm",
+        opts = {},
     },
 
+    { -- hover 
+        "lewis6991/hover.nvim"
+    },
 
     -- Alpha Dashboard
     {
