@@ -19,9 +19,9 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 for _, srvr in ipairs(lsp_server_list) do
     vim.lsp.config(
-            srvr , {
-            capabilities = capabilities,
-            on_attach = on_attach
+              srvr , {
+              capabilities = capabilities,
+              on_attach = on_attach
             })
 end
 
