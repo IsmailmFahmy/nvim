@@ -18,30 +18,32 @@ local plugins = {
     {'dstein64/vim-startuptime'},
 
     -- ColorSchemes
-    {"ellisonleao/gruvbox.nvim" },
-    {'nyoom-engineering/oxocarbon.nvim'},
-    {'rose-pine/neovim'},
-    {'xiyaowong/transparent.nvim'},
-    {'Mofiqul/dracula.nvim'},
+    { "xiyaowong/transparent.nvim" },
+    { "ellisonleao/gruvbox.nvim" },
+    { "nyoom-engineering/oxocarbon.nvim" },
+    { "rose-pine/neovim" },
+    { "Mofiqul/dracula.nvim" },
+    { "EdenEast/nightfox.nvim" },
     { "catppuccin/nvim", name = "catppuccin" },
+    { "rebelot/kanagawa.nvim" },
 
     -- Undo Tree
-    {'mbbill/undotree'},
+    {"mbbill/undotree"},
 
     -- Better UI
-    {'stevearc/dressing.nvim'},
+    {"stevearc/dressing.nvim"},
 
     -- Rust
     {
-        'rust-lang/rust.vim',
+        "rust-lang/rust.vim",
         ft = "rust"
     },
     {
-        'mrcjkb/rustaceanvim',
+        "mrcjkb/rustaceanvim",
         lazy = false, -- This plugin is already lazy
     },
     {
-        'saecki/crates.nvim',
+        "saecki/crates.nvim",
         tag = 'stable',
         ft = "toml",
     },
@@ -49,9 +51,9 @@ local plugins = {
 
     -- Telescope
     {
-        'nvim-telescope/telescope.nvim',
+        "nvim-telescope/telescope.nvim",
         dependencies = { 'nvim-lua/plenary.nvim' },
-        'nvim-telescope/telescope-ui-select.nvim',
+        "nvim-telescope/telescope-ui-select.nvim",
     },
 
 
@@ -71,16 +73,16 @@ local plugins = {
     },
 
     -- Lua Line
-    {'nvim-lualine/lualine.nvim'},
+    {"nvim-lualine/lualine.nvim"},
 
     -- Tree-Stitter
-    {'nvim-treesitter/nvim-treesitter'},
+    {"nvim-treesitter/nvim-treesitter"},
 
 
     -- Snippets
     {
-        'L3MON4D3/LuaSnip',
-        'rafamadriz/friendly-snippets',
+        "L3MON4D3/LuaSnip",
+        "rafamadriz/friendly-snippets",
     },
 
     -- Mason // LSP
@@ -91,12 +93,12 @@ local plugins = {
     },
 
     {
-        'hrsh7th/nvim-cmp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'saadparwaiz1/cmp_luasnip',
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-nvim-lua',
+        "hrsh7th/nvim-cmp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-nvim-lua",
         "ibhagwan/fzf-lua",
     },
 
@@ -112,7 +114,7 @@ local plugins = {
 
     -- Alpha Dashboard
     {
-        'goolord/alpha-nvim',
+        "goolord/alpha-nvim",
         dependencies = { 'kyazdani42/nvim-web-devicons'}
     },
 
@@ -124,7 +126,7 @@ local plugins = {
 
     -- Comments
     {
-        'numToStr/Comment.nvim',
+        "numToStr/Comment.nvim",
         config = function()
             require('Comment').setup()
         end
