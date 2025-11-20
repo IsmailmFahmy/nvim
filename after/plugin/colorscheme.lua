@@ -34,6 +34,8 @@ elseif (Color == 4 ) then
   Color = 'dracula'
 elseif (Color == 5 ) then
   Color = 'catppuccin-macchiato'
+elseif (Color == 6 ) then
+  Color = 'nightfox'
 end
 
 
