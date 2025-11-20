@@ -7,7 +7,7 @@ require("remap")
 
 
 
-vim.cmd("colorscheme catppuccin-macchiato")
+vim.cmd("colorscheme rose-pine-main")
 
 -- Faster loading
 vim.loader.enable()
@@ -67,8 +67,8 @@ local options = {
     number = true,                           -- set numbered lines
     relativenumber = true,                   -- set relative numbered lines
     numberwidth = 2,                         -- set number column width to 2 {default 4}
-    ts = 4,
-    sw = 4,
+    ts = 2,                                  -- tab stop 
+    sw = 2,                                  -- shift width
     signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
     wrap = true,                             -- display lines as one long line
     linebreak = true,                        -- companion to wrap, don't split words
